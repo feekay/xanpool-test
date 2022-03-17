@@ -5,7 +5,7 @@ import { PairsCacheImpl } from '../../src/repositories/pairs-cache';
 import { PairsRepository } from '../../src/repositories/pairs-repository';
 import { Pair } from '../../src/services/pairs-service';
 
-describe('Pair Controller Test', function () {
+describe('Pair Repository Test', function () {
   const cache = new PairsCacheImpl(100);
   const oracle = mockito.mock(FixerApi);
   const repo = new PairsRepository(cache, oracle);

@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { PairsCacheImpl } from '../../src/repositories/pairs-cache';
 import { Pair } from '../../src/services/pairs-service';
-describe('Pair Controller Test', function () {
+describe('Pair Cache Test', function () {
   const cache = new PairsCacheImpl(10);
   it('when cache is missed, return undefined', function () {
     expect(cache.get('USD', 'EUR')).to.be.undefined;
