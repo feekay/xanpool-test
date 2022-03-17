@@ -43,3 +43,6 @@ Linting:
 
 Formatting:
 ``` npm run prettier-format ```
+
+### Note on coverage:
+Tried integrating coverage with `nyc` but for some reason `ts-mockito` fails under coverage. im debugging what maybe the issue.
