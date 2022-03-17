@@ -25,6 +25,7 @@ describe('Pair Repository Test', function () {
 
     const result = await repo.get('USD', 'EUR');
     expect(result).to.be.an('object');
+    mockito.verify(oracle.getByName).never;
   });
 
   it('when cache is missed, oracle should be used to load data', async function () {
@@ -32,7 +33,7 @@ describe('Pair Repository Test', function () {
     const result = await repo.get('USD', 'EUR');
     expect(result).to.be.an('object');
     expect(result.name).to.equal('USD-EUR');
-    mockito.verify(oracle.getByName);
+    mockito.verify(oracle.getByName).once;
   });
 
   it('when cache is missed, and oracle fails, throw error', async function () {
@@ -41,5 +42,6 @@ describe('Pair Repository Test', function () {
     expect(result).to.be.an('object');
     expect(result.name).to.equal('USD-EUR');
     mockito.verify(oracle.getByName);
+    mockito.verify(oracle.getByName).once;
   });
 });
